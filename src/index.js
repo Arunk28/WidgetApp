@@ -2,9 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Accordion from './Component/Accordion';
 
-
+const items =[{
+    title :'what is react',
+    content:'react is front end javascript library'
+},{
+    title :'what is computer',
+    content:'computer is a maching'
+},{
+    title :'what is c#',
+    content:'C# is a programming language'
+}]
 const App = ()=>{
-    return <div><Accordion/></div>
+    return <div><Accordion items={items}/></div>
 };
 
 ReactDOM.render(<App/>,document.querySelector('#root'))
