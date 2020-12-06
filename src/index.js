@@ -13,7 +13,9 @@ const items =[{
     content:'C# is a programming language'
 }]
 const App = ()=>{
-    return <div><Accordion items={items}/></div>
+    return ( <div>
+        <br/>
+        <Accordion items={items}/></div>)
 };
 
 ReactDOM.render(<App/>,document.querySelector('#root'))
