@@ -18,6 +18,7 @@ const Search = () => {
       });
       setResults(data.query.search);
     };
+    search();
   }, [term]);
 
   const renderResults = results.map((result) => {
@@ -25,7 +26,7 @@ const Search = () => {
       <div key={result.pageid} className="item">
         <div className="content">
           <div className="header">{result.title}</div>
-          {result.snippet}
+          <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
         </div>
       </div>
     );
