@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Accordion from "./Component/Accordion";
+import DropDown from "./Component/DropDown";
 import Search from "./Component/Search";
 
 const items = [
@@ -17,12 +18,27 @@ const items = [
     content: "C# is a programming language",
   },
 ];
+
+const options = [
+  {
+    label: "React",
+    value: "react",
+  },
+  { label: "Csharp", value: "c#" },
+];
+
 const App = () => {
+  const [selected, setSelected] = useState(options[0]);
   return (
     <div>
       {/* <br/>
         <Accordion items={items} /> */}
-      <Search />
+      {/* <Search /> */}
+      <DropDown
+        options={options}
+        selected={selected}
+        onSelectedChange={setSelected}
+      />
     </div>
   );
 };

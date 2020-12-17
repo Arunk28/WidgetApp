@@ -1,19 +1,27 @@
+import { render } from "@testing-library/react";
 import React from "react";
 
-const DropDown = ({ options }) => {
+const DropDown = ({ options, selected, onSelectedChange }) => {
   const renderOption = options.map((option) => {
-    return <div key={option.value}>{option.label}</div>;
+    return (
+      <div
+        className="item"
+        key={option.value}
+        onClick={() => onSelectedChange(option)}
+      >
+        {option.label}
+      </div>
+    );
   });
   return (
-    <div className="ui form">
-      <div className="field">
-        <label className="label">Select a Colour</label>
-        <div className="ui selection dropdown visible actives">
-          <i className="dropdown icon"></i>
-          <div className="text">Select Color</div>
-          <div className="menu visible transition">{renderOption}</div>
-        </div>
+    <div className="ui compact menu">
+      <div className="ui simple dropdown item">
+        {selected.label}
+        <i className="dropdown icon" />
+        <div className="menu">{renderOption}</div>
       </div>
     </div>
   );
 };
+
+export default DropDown;
