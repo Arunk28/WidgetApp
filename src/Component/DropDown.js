@@ -1,7 +1,9 @@
 import { render } from "@testing-library/react";
-import React from "react";
+import React, { useRef } from "react";
 
 const DropDown = ({ options, selected, onSelectedChange }) => {
+  const ref = useRef();
+
   const renderOption = options.map((option) => {
     if (option.value == selected.value) return null;
     return (
@@ -15,7 +17,7 @@ const DropDown = ({ options, selected, onSelectedChange }) => {
     );
   });
   return (
-    <div className="ui compact menu">
+    <div ref={ref} className="ui compact menu">
       <div className="ui simple dropdown item">
         {selected.label}
         <i className="dropdown icon" />
