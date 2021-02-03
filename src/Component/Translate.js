@@ -12,6 +12,8 @@ const Options = [
     value: "ar",
   },
   { label: "Hindi", value: "hi" },
+  { label: "Tamil", value: "ta" },
+  { label: "Malayalam", value: "ml" },
 ];
 
 const Translate = () => {
